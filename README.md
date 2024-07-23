@@ -15,10 +15,12 @@ ConvKernel模板结构体中包含了卷积核的数据和参数。
 
 #### 1.1.2 函数
 | 函数原型 | 说明 |
+| :----: | :----: |
 | ConvKernel(int Width, int Height, int Channel, int Count) | 二维卷积核构造函数，初始化二维卷积核数据 |
 | ConvKernel(int Width, int Height,int Depth, int Channel, int Count) | 三维卷积核构造函数，初始化三维卷积核数据 |
 | void InitializeDataToRandom(type fMin, type fMax) | 随机初始化卷积核数据和偏置，fMin为随机数最小值，fMax为随机数最大值 |
 | void PrintKernel() | 打印卷积核数据 |
+
 ### 1.2 convCalculator类
 convCalculator模板类中包含了卷积计算的数据和函数。  
 #### 1.2.1 数据
