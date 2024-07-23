@@ -107,6 +107,8 @@ bool ResultCheck(type *result_gpu,int size, type* result_cpu) {
 
 int main()
 {
+
+    char* file_name = "data/train-images.idx3-ubyte";
     clock_t start, end;
     std::cout << "--------------------------------------------" << std::endl;
     std::cout << "data type = \"double\"" << std::endl;
@@ -116,9 +118,10 @@ int main()
 
     // kernel->PrintKernel();
 
+
     // 设置输入数据
     double *imageData ;
-    load_mnist_data<double>(imageData, "train-images.idx3-ubyte");
+    load_mnist_data<double>(imageData, file_name);
 
     convCalculator<double> conv;
     start = clock();
@@ -143,7 +146,7 @@ int main()
 
     // 设置输入数据
     float *imageData2 ;
-    load_mnist_data<float>(imageData2, "train-images.idx3-ubyte");
+    load_mnist_data<float>(imageData2, file_name);
 
     convCalculator<float> conv3;
     start = clock();
@@ -167,7 +170,7 @@ int main()
     kernel3->InitializeDataToRandom(-1, 1);
 
     int *imageData3 ;
-    load_mnist_data<int>(imageData3, "train-images.idx3-ubyte");
+    load_mnist_data<int>(imageData3, file_name);
 
     convCalculator<int> conv5;
     start = clock();
@@ -191,7 +194,7 @@ int main()
 
     // 设置输入数据
     double *TextData ;
-    load_mnist_data<double>(TextData, "train-images.idx3-ubyte");
+    load_mnist_data<double>(TextData, file_name);
 
     convCalculator<double> conv7;
     start = clock();
@@ -216,7 +219,7 @@ int main()
 
     // 设置输入数据
     float *TextData2 ;
-    load_mnist_data<float>(TextData2, "train-images.idx3-ubyte");
+    load_mnist_data<float>(TextData2, file_name);
 
     convCalculator<float> conv9;
     start = clock();
@@ -241,7 +244,7 @@ int main()
 
     // 设置输入数据
     int *TextData3 ;
-    load_mnist_data<int>(TextData3, "train-images.idx3-ubyte");
+    load_mnist_data<int>(TextData3, file_name);
 
     convCalculator<int> conv11;
     start = clock();
@@ -269,7 +272,7 @@ int main()
     // 设置输入数据
     double *imageData4 ;
     int VideoDepth = 3;
-    load_mnist_data<double>(imageData4, "train-images.idx3-ubyte");
+    load_mnist_data<double>(imageData4, file_name);
 
 
     convCalculator<double> conv13;
@@ -295,7 +298,7 @@ int main()
 
     // 设置输入数据
     float *imageData5 ;
-    load_mnist_data<float>(imageData5, "train-images.idx3-ubyte");
+    load_mnist_data<float>(imageData5, file_name);
 
     convCalculator<float> conv15;
     start = clock();
@@ -320,7 +323,7 @@ int main()
 
     // 设置输入数据
     int *imageData6 ;
-    load_mnist_data<int>(imageData6, "train-images.idx3-ubyte");
+    load_mnist_data<int>(imageData6, file_name);
 
     convCalculator<int> conv17;
     start = clock();
