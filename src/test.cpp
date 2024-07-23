@@ -108,7 +108,7 @@ bool ResultCheck(type *result_gpu,int size, type* result_cpu) {
 int main()
 {
 
-    char* file_name = "data/train-images.idx3-ubyte";
+    const char* file_name = "data/train-images.idx3-ubyte";
     clock_t start, end;
     std::cout << "--------------------------------------------" << std::endl;
     std::cout << "data type = \"double\"" << std::endl;

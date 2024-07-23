@@ -219,7 +219,7 @@ void Conv3DCUDA(type* d_Indata, ConvKernelGPU<type> * d_CKC, type* OutData,
 {
     cudaError_t Err;
     int VideoSize3D = VideoWidth * VideoHeight * VideoDepth;
-    int InSize = BatchSize * InChannel * VideoSize3D * sizeof(type), OutSize = BatchSize * OutChannel * VideoSize3D * sizeof(type);
+    int  OutSize = BatchSize * OutChannel * VideoSize3D * sizeof(type);
 
     // type* OutData = nullptr; //new type[OutSize / sizeof(type)];
     type* d_OutData, * d_ReluData;
@@ -264,7 +264,7 @@ void Conv2DCUDA_3(type* d_Indata, ConvKernelGPU<type> * d_CKC, type* ImageOutDat
     //test_CB(CB, CK, BatchSize, nullptr, 0);
     cudaError_t Err;
     int ImageSize2D = ImageWidth * ImageHeight;
-    int InSize = BatchSize * InChannel * ImageSize2D * sizeof(type), OutSize = BatchSize * OutChannel * ImageSize2D * sizeof(type);
+    int OutSize = BatchSize * OutChannel * ImageSize2D * sizeof(type);
 
     // type* OutData = nullptr; //new type[OutSize / sizeof(type)];
     type* d_OutData, * d_ReluData;
@@ -309,7 +309,7 @@ void Conv1DCUDA(type* d_Indata, ConvKernelGPU<type> * d_CKC, type* OutData,
 {
     cudaError_t Err;
     int TextSize = TextWidth * sizeof(type);
-    int InSize = BatchSize * InChannel * TextSize, OutSize = BatchSize * OutChannel * TextSize;
+    int OutSize = BatchSize * OutChannel * TextSize;
 
     type* d_OutData, * d_ReluData;
     Err = CUDA_MALLOC(d_OutData, OutSize);
